@@ -1,0 +1,25 @@
+<div>
+
+    <select (change)="showGames($event)">
+        <option selected disabled>Select Target Audience</option>
+        <option *ngFor="let a of audiences" value="{{a.audienceId}}">{{a.audienceName}}</option>
+    </select>
+
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let g of games">
+                <td>{{g.name}}</td>
+                <td>{{g.description}}</td>
+                <td>{{g.price}}</td>
+                <button (click)="deleteGame(g.gameId)">X</button>
+            </tr>
+        </tbody>
+    </table>
+</div>
